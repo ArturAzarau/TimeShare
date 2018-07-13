@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,21 +13,23 @@
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="TimeShare_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqM-fA-uHI">
+                                <rect key="frame" x="98.5" y="242" width="123" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="c5u-pC-JsI"/>
+                                </constraints>
+                                <state key="normal" title="Create New Event"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="d1e-fi-ked" secondAttribute="centerY" id="H0s-hz-dDP"/>
-                            <constraint firstAttribute="centerX" secondItem="d1e-fi-ked" secondAttribute="centerX" id="wFy-hW-Bib"/>
+                            <constraint firstItem="lqM-fA-uHI" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="4dv-o7-7Mp"/>
+                            <constraint firstItem="lqM-fA-uHI" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="MbY-l9-haW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                     </view>
@@ -32,6 +38,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="10" y="142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rpB-9E-uw1">
+            <objects>
+                <viewController storyboardIdentifier="CreateEvent" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHV-lX-c9U" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZIm-SF-5xW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Akz-2p-eHM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="407"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="F9Y-z7-dFb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9Y-z7-dFb" id="ZCU-rM-aPK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0YD-b1-grj">
+                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="553199381.33614504">
+                                    <!--2018-07-13 18:29:41 +0000-->
+                                </date>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gxC-hN-Wkt">
+                                <rect key="frame" x="118" y="623" width="139" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-IE-Hde">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
+                                        <state key="normal" title="Add Date"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFA-KE-oyS">
+                                        <rect key="frame" x="104" y="0.0" width="35" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Save"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IbJ-Is-7rf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0YD-b1-grj" firstAttribute="leading" secondItem="wEN-Wf-L4D" secondAttribute="leading" id="A7c-UL-mVC"/>
+                            <constraint firstItem="0YD-b1-grj" firstAttribute="top" secondItem="Akz-2p-eHM" secondAttribute="bottom" id="D6c-Ju-uCz"/>
+                            <constraint firstItem="Akz-2p-eHM" firstAttribute="top" secondItem="ZIm-SF-5xW" secondAttribute="top" id="Fuk-fI-aHl"/>
+                            <constraint firstItem="0YD-b1-grj" firstAttribute="trailing" secondItem="wEN-Wf-L4D" secondAttribute="trailing" id="LIN-91-lVh"/>
+                            <constraint firstItem="gxC-hN-Wkt" firstAttribute="top" secondItem="0YD-b1-grj" secondAttribute="bottom" id="duE-1T-iZN"/>
+                            <constraint firstItem="Akz-2p-eHM" firstAttribute="trailing" secondItem="wEN-Wf-L4D" secondAttribute="trailing" id="fe4-Qm-X5s"/>
+                            <constraint firstItem="wEN-Wf-L4D" firstAttribute="bottom" secondItem="gxC-hN-Wkt" secondAttribute="bottom" id="iIa-Jx-ZQT"/>
+                            <constraint firstItem="gxC-hN-Wkt" firstAttribute="centerX" secondItem="wEN-Wf-L4D" secondAttribute="centerX" id="qDb-nx-cOI"/>
+                            <constraint firstItem="Akz-2p-eHM" firstAttribute="leading" secondItem="wEN-Wf-L4D" secondAttribute="leading" id="uLW-OP-t0Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wEN-Wf-L4D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hg7-JU-8uH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.79999999999995" y="152.47376311844079"/>
         </scene>
     </scenes>
 </document>
